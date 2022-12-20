@@ -4,7 +4,7 @@
 
 ---
 
-
+g
 **[입력 예시]**
 
 `'Life is too short, you need python'`

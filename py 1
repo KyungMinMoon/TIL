@@ -1,0 +1,115 @@
+# items라는 딕셔너리에서 fruits라는 리스트 안에 있는 과일을 pick
+# 과일을 묶고 과일이 아닌 것을 묶은 다음, 그들의 개수를 합치는 과정
+# 
+
+basket_items = {'apples': 4, 'oranges': 19, 'kites': 3, 'sandwiches': 8}
+fruits = ['apples', 'oranges', 'pears', 'peaches', 'grapes', 'bananas']
+
+fruit_count = 0 # 아무것도 안 해놓으면 밑에서 non_fruit 설정해놓은 적 없잖아 라고 코딩으로 뜬다!
+not_fruit_count = 0
+for key in basket_items:
+    if key in fruits:
+        fruit_count += basket_items[key]
+    else:
+        not_fruit_count += basket_items[key]
+
+print(f'과일은 {fruit_count}개이고, {not_fruit_count}개는 과일이 아닙니다.')
+
+
+
+print(f'과일은 {fruit_count}개이고, {not_fruit_count}개는 과일이 아닙니다.')
+
+
+basket_items = {'apples': 4, 'oranges': 19, 'kites': 3, 'sandwiches': 8}
+fruits = ['apples', 'oranges', 'pears', 'peaches', 'grapes', 'bananas']
+
+fruit_num = 0
+non_fruit_num = 0
+
+for item in list(basket_items.keys()):
+    if item in fruits:
+        fruit_num += basket_items[item]
+    else:
+        non_fruit_num += basket_items[item]
+print(f'과일은 {fruit_num}개이고, {non_fruit_num}개는 과일이 아닙니다.')
+
+
+
+my_numbers = [1, 2, 3, 4, 5, 6]
+jackpot_numbers = [2, 1, 4, 5, 6, 7]
+bonus_number = 8
+* 내가 로또 몇등이지?
+```
+1등 : 다 일치
+2등 : 어려움. 5개일치 + 나머지 하나가 보너스 (2 3 4 5 6 8)
+3등 : 5개
+4등 : 4개
+5등 : 3개
+    
+    
+# 나
+my_numbers = [1, 2, 3, 4, 5, 6]
+jackpot_numbers = [2, 1, 4, 5, 6, 7]
+jackpot_numbers.sort()
+
+set1 = set(my_numbers)
+set2 = set(jackpot_numbers)
+
+if set1 == set2:
+    print("1등입니다.") 
+else: # 없다고 판단하는 else를 만들어야해.
+    if 8 in my_numbers:  # my_numbers가 8 포함하는지/ 5개가 같아야한다는 조건
+        print("2등입니다") 
+
+    elif set1 - set2 = 1: # 6개 중 5개가 맞는지
+        
+# 유진님이 intersection 으로 위에 for문 안 해도 되는, 알려주신 코딩
+chk = len(my_numbers.intersection(jackpot_numbers))
+
+#현수님
+my_numbers = [1, 2, 3, 4, 5, 6]
+jackpot_numbers = [2, 1, 4, 5, 6, 7]
+bonus_number = 8
+cnt = 0
+result = ''
+check_nums = [3, 4, 5, 6]
+
+for number in my_numbers:
+    if number in jackpot_numbers:
+        cnt += 1
+        
+        
+for check in check_nums: 
+    if cnt == 5 and bonus_number in my_numbers:
+        result = '2등'
+    elif cnt == 6:
+        result = '1등'
+    elif cnt == 5:
+        result = '3등'
+    elif cnt == 4:
+        result = '4등'
+    elif cnt == 3:
+        result = '5등'
+        
+print(result)
+
+# 최민정
+intersects = list(set(my_numbers) & set(jackpot_numbers))
+set_diff = list(set(my_numbers) - set(intersects))
+
+if intersects == jackpot_numbers:
+    
+
+
+print('1등')
+elif len(intersects) == 5:
+    if set_diff == bonus_number:
+        print('2등')
+    else:
+        print('3등')
+elif len(intersects) == 4:
+    print('4등')
+elif len(intersects) == 3:
+    print('5등')
+else:
+    pass

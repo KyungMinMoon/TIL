@@ -1,3 +1,5 @@
+# app.py
+
 from flask import Flask, request
 import random
 from utils import send_message
@@ -39,3 +41,26 @@ def send_message(msg, sender_id):
 @app.route('/lotto')
 def test():
     return OK
+
+
+
+
+    ---
+# utils
+
+    import requests
+import random
+
+token = '5333713413:AAEyYZkdGPps3H-LVAFLG4dbg3aZiwAfQ1I'
+me = '5581631026'
+
+def send_message(msg, sender_id):
+    token = '5333713413:AAEyYZkdGPps3H-LVAFLG4dbg3aZiwAfQ1I'
+    url = f'https://api.telegram.org/bot{token}/sendMessage?chat_id={sender_id}&text={msg}'
+    requests.get(url)
+
+
+# send_message('안녕', '5581631026')
+
+
+'https://api.telegram.org/bot5333713413:AAEyYZkdGPps3H-LVAFLG4dbg3aZiwAfQ1I/setWebhook?url=Kyungmin.pythonanywhere.com'

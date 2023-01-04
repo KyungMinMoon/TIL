@@ -49,3 +49,37 @@ urlpatterns = [
 ```
 
 wow라는 url이 들어오면, hihihi라는 함수를 실행시켜라.
+
+---
+### Application definition
+* startapp 을 하면 가장 먼저 해야하는 일은 => INSTALLED_APPS에 이름 등록하기
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'hello',
+    'my_site',
+]
+
+---
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+
+        # 추가로 템플릿을 모아 놓을 폴더들 
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]

@@ -25,7 +25,6 @@ TEMPLATES = [
 
 ```
 
-
 ## review urls.
 
 ```
@@ -45,4 +44,83 @@ urlpatterns = [
 
 
 # review/hello/ => view hello 함수 실행 => hello.html을 응답(렌더)
+```
+
+
+### urls.py
+
+```html
+from django.urls import path
+from . import views
+
+app_name = 'data'
+
+urlpatterns = [
+    # data/
+    path('', views.index, name="index"),
+    # data/hello/<name>/ => variable Routing
+    path('hello/<str:name>/', views.hello, name='hello'),
+
+    # hello/neo/ => 안녕 neo,
+    # hello/andy/ => 안녕 andy,
+
+
+    # data/user_input/
+    path('user_input/', views.user_input, name='user_input'),
+
+    path('user_output/', views.user_output, name='user_output')
+]
+
+```
+
+### views.py
+```html
+from django.shortcuts import render
+
+def index(request):
+
+    return render(request, 'data/index.html')
+
+def hello(request, name):
+    context = {
+        'name' : name,
+    }
+    return render(request, 'data/hello.html', context)
+
+def user_input(request):
+
+    return render(request,'data/user_input.html')
+
+def user_output(request):
+    print(request.POST['username'], request.POST['password'])  #딕셔너리다
+    return render(request, 'data/user_output.html')
+```
+
+### hello.html
+```html
+{% include 'base.html' %}
+
+{% block content %}
+<h1>안녕, {{name}}</h1>
+{% endblock content %}
+```
+
+### user_input.html
+
+```html
+{% include 'base.html' %}
+
+{% block content %}
+<h1>User Input</h1>
+
+<form action="{% url 'data:user_output' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit">
+</form>
+
+
+
+{% endblock content %}
 ```

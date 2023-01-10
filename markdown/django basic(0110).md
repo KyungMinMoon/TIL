@@ -70,4 +70,25 @@ mtv/settings.py에 들어가서
 'a.apps.mtvfolder', 
 추가하기
 
-a/apps.py에서 
+---
+block content/ endblock 하는 이유
+
+html 기본 base를 상속받아 렌더링할 때, 특정 부분에 해당하는 부분만 상속받은 자식 html 내에서 원하는 양식으로 변경하고 싶을 때
+
+ul(unordered list) : 순서가 없는 리스트
+li(list item) : 요 리스트 안에 있는 아이템
+
+---
+
+render
+request와 template_name 을 필수로 한다.
+**템플릿을 불러오는 역할
+
+redirect
+어느 URL로 이동할지를 정하지만, context 값을 넘기지 못한다.
+**URl로 이동하는 역할
+
+
+classname.objects.all()
+모든 데이터를 다 가져온다
+

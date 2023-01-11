@@ -80,6 +80,8 @@ li(list item) : 요 리스트 안에 있는 아이템
 
 ---
 
+
+
 render
 request와 template_name 을 필수로 한다.
 **템플릿을 불러오는 역할

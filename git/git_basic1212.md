@@ -48,7 +48,7 @@
 4. git status : 작업 디렉토리와 스테이징 영역 상태 확인한다.
 5. git log : 가장 최근의 커밋이 가장 먼저 나오고, 지난 히스토리를 시간순으로 조회한다.
 6. git config --global user.name "name" : 사용자 이름 설정
-7. git config --global user.email "email@com" : 사용자 이메일 설정
+7. git config --global user.email "email@com" g: 사용자 이메일 설정
 8. git remote add [<name>> <URL>] : remote(원격 저장소)에 URL 추가, origin이라고 하면 URL을 의미하는 것이다.
 9. git push <name> <branch> : 내 로컬 디렉토리로부터 <name>,흔히 origin이라는 remote repo로 보낸다. origin의 master브랜치에 푸쉬.
 

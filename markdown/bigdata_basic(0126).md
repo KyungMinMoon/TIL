@@ -96,3 +96,43 @@ Data Work Flow
 과정평가/결과해석/시각화
 --->Evaluation/interpret/visualization
 
+
+
+
+## 넘파이:ML 주요 알고리즘 -선형대수와 통계에 기반
+
+* Numpy는  Numerical Python을 의미하며 파이썬에서 선형대수 기반의 프로그램을 쉽게 만들 수 있도록 지원하는 대표 패키지
+* 루프를 사용치 않고 대량 데이터의 배열 연산이 가능
+* C/C++과 같은 저수준 언어 기반의 호환 API제공
+
+ 라이브러리 호출
+
+import numpy as np
+
+
+l1 = [1,2,3]
+
+ array 생성
+array_l1 = np.array(l1)
+
+ type과 shape을 확인한다.
+print('array_l1 type:', type(array_l1))
+print('array_l1 shape:', array_l1.shape)  # property - shape, ndim
+
+
+
+
+ 차원 복습 - 2차원 생성
+l3 = [
+    [
+        [11,22,33],
+        [44,55,66]
+    ]
+]  
+
+ array 생성
+array_l3 = np.array(l3)
+
+ type과 shape을 확인한다.
+print('array_l3 type:', type(array_l3))
+print('array_l3 shape:', array_l3.shape)  # property - shape, ndim
